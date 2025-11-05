@@ -1,0 +1,544 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --cor-primaria: #243650;
+  --cor-secundaria: #f4bb1d;
+  --cor-terciaria: #415b75;
+  --cor-primaria-bg: #0d111c;
+  --cor-secundaria-bg:#1a202c;
+  --cor-primaria-fonte: rgba(255,255,255,.85);
+  --cor-secundaria-fonte: #aebacd;
+  --cor-links: #3498db;
+  --white-color: #FFFFFF;
+  --cor-article-bg: #28303d;
+}
+
+body {
+  background-color: var(--cor-primaria-bg);
+
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+
+  min-height: 100vh; 
+
+  display: flex;
+  flex-direction: column;
+
+  overflow-x: hidden;
+
+}
+
+h1 {
+  color: var(--white-color);
+}
+
+h3 {
+  color: var(--cor-links);
+}
+
+h2, h4, a{
+  color: var(--cor-primaria-fonte);
+  line-height: 1.6;
+}
+
+p {
+  color: var(--cor-secundaria-fonte);
+}
+
+article {
+  background-color: var(--cor-article-bg);
+}
+
+
+html {
+  scroll-behavior: smooth
+}
+
+
+
+
+
+/* ---- Iníco - Cabeçalho ---- */
+  .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+  }
+
+  .header-container {
+   background-color: var(--cor-primaria);
+    
+    padding: 16px 0;
+
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 2px solid var(--cor-terciaria);
+  }
+
+
+  .header-container .logo {
+    height: 120px;
+    width: auto;
+
+    margin-left: 20px;
+    border: 2px solid var(--cor-terciaria);
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+
+  .header-container nav ul {
+    display: flex;
+    flex-direction: row;
+    
+    margin: 24px;
+    
+    gap: 16px;
+
+    margin-right: 20px;
+  }
+
+  .header-container nav ul li {
+    list-style: none;
+  }
+
+  .header-container nav a {
+  
+    font-size: 24px;
+    font-weight: 400;
+    
+    padding: 11px 24px;
+    position: relative;
+
+    text-decoration: none;
+
+  }
+
+  .header-container nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--cor-secundaria); 
+    transition: width 0.3s ease-out; 
+  }
+
+  .header-container nav ul li a:hover::after {
+    width: 100%;  
+  }
+
+/*Fim - Cabeçalho */
+
+/* Iníco - Conteúdo Principal */
+
+.hero-banner {
+  background-image: url('../images/logo/banner-pd-games.png');
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat;
+  text-align: center;
+  padding: 150px 20px; 
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  min-height: 700px; 
+  position: relative;
+}
+
+.hero-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); 
+}
+
+
+.hero-banner .container {
+    max-width: 800px; 
+    z-index: 2;
+}
+
+.hero-banner h1 {
+  font-size: 3.5em; 
+  margin-bottom: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+
+}
+
+.hero-banner p {
+  font-size: 1.4em;
+  margin-bottom: 30px;
+  font-weight: 300;
+  color: var(--cor-primaria-fonte);
+}
+
+.cta-button {
+  display: inline-block; 
+  background-color: var(--cor-terciaria); 
+  padding: 15px 35px;
+  border-radius: 5px;
+  font-size: 1.1em;
+  font-weight: 600;
+
+  text-decoration: none;
+}
+
+.cta-button:hover {
+  background-color: var(--cor-secundaria);
+}
+
+.servicos-overview {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #1a202c; 
+  border-radius: 8px;
+  margin-top: -80px; 
+  position: relative; 
+  z-index: 5; 
+}
+
+.servicos-overview h1 {
+  font-size: 2.5em;
+  margin-bottom: 15px;
+}
+
+.servicos-overview .secao-subtitulo {
+    font-size: 1.2em;
+    color: #aebacd;
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.servicos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px; 
+    margin-top: 40px;
+}
+
+.servicos-grid article { 
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left; 
+}
+
+.servicos-grid article:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--cor-secundaria-fonte) 0px 4px 15px;
+  transition: transform 0.5s ease;
+}
+
+.servicos-grid article img {
+  height: 180px; 
+  
+  margin-bottom: 20px;
+  border-radius: 5px;
+  width: 100%; 
+}
+
+.servicos-grid article h2 {
+  font-size: 1.6em;
+  
+  margin-bottom: 10px;
+}
+
+
+.diferenciais {
+  padding: 80px 0;
+  background-color: #0d111c; 
+  text-align: center;
+}
+
+.diferenciais h2 {
+  font-size: 2.5em;
+  margin-bottom: 50px;
+}
+
+.diferencial-item {
+  background-color: #1a202c;
+  border-left: 5px solid var(--cor-secundaria); 
+  padding: 30px;
+  margin-bottom: 25px;
+  border-radius: 8px;
+  text-align: left;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.diferencial-item h4 {
+  font-size: 1.8em;
+  
+  margin-bottom: 10px;
+}
+
+.diferencial-item p {
+  font-size: 1.1em;
+  color: #aebacd;
+}
+
+/* Fim - Conteúdo Principal */
+
+/* Início - footer */
+
+  footer {
+    background-color: #080a10; 
+    color: var(--cor-fonte);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 40px 20px;
+    text-align: center;
+
+    border-top: 2px solid var(--cor-terciaria); 
+  }
+
+  .footer-logo {
+    width: 72px;
+    height: 72px;
+    background: url(https://www.pdcase.com/img/logo-pdcase.svg) no-repeat;
+    display: block;
+    background-position: 0 bottom;
+    filter: invert(1);
+  }
+
+  footer p {
+    margin-top: 16px;
+    font-size: 14px;
+  }
+  
+  
+  footer #social-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+  }
+  
+  footer img {
+    height: 42px; 
+    width: auto;
+    display: inline-block; 
+    vertical-align: middle; 
+    margin-right: 8px;
+
+    margin-top: 24px;
+  }
+
+
+  footer a {
+    color: var(--cor-links);
+    transition: color 0.3s ease;
+    display: flex;
+    flex-direction: row;
+  }
+
+  footer a:hover {
+    color: #2980b9;
+  }
+
+
+/* Fim - footer */
+
+/* ---- Sobre ---- */
+
+.page-content {
+    padding: 40px;
+    margin: 40px auto; 
+}
+
+.page-content h1 {
+    font-size: 2.8em;
+    font-weight: 700;
+    margin-bottom: 25px;
+    border-bottom: 2px solid var(--cor-terciaria);
+    padding-bottom: 15px;
+}
+
+
+.page-content h2 {
+    font-size: 2.2em;
+    font-weight: 600;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--cor-terciaria);
+}
+
+.page-content h3 {
+    font-size: 1.6em;
+    margin-bottom: 10px;
+}
+
+.page-content p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    line-height: 1.7;
+}
+
+.page-content ul {
+    list-style-type: disc; 
+    padding-left: 25px; 
+}
+
+.page-content li {
+    font-size: 1.1em;
+    color: var(--cor-secundaria-fonte);
+    margin-bottom: 10px;
+}
+
+
+.page-content strong {
+    color: var(--cor-primaria-fonte);
+    font-weight: 600;
+}
+
+.page-content strong:hover {
+    color: var(--cor-links);
+}
+
+.page-content section {
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #28303d;
+}
+
+.page-content section:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.valores {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 30px; 
+    align-items: start; 
+}
+
+.valores h2 {
+    grid-column: 1 / -1; 
+}
+
+
+.valores article {
+    padding: 25px;
+    border-radius: 8px;
+    height: 100%; 
+}
+
+.valores article:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--cor-secundaria-fonte) 0px 4px 15px;
+    transition: transform 0.5s ease;
+  }
+  
+  .equipe img {
+    margin: auto;
+    display: block;
+    
+    align-items: center;
+    border-radius: 24px;
+    margin-top: 15px;
+    
+    box-shadow: var(--cor-links) 2px 4px 15px;
+  }
+
+  .equipe img:hover {
+    box-shadow: var(--cor-secundaria) 2px 4px 15px;
+    transform: translateY(-8px);
+    transition: transform 0.3s ease;
+  }
+  
+/* ---- Fim Sobre ---- */
+
+/* ---- Serviços ----*/
+  .page-content section {
+    margin: 48px auto;
+    padding: 0;
+  }
+
+  .page-content ul {
+    margin-bottom: 48px;
+    
+  }
+
+  .servico-item {
+    margin-bottom: 28px;
+    background-color: transparent;
+  }
+
+  .servico-item img {
+    margin: auto;
+    display: block;
+    
+    align-items: center;
+
+    height: 700px;
+    width: 900px;
+
+  }
+
+  .servico-item img:hover {
+    box-shadow: var(--cor-secundaria) 2px 4px 15px;
+    transform: translateY(-8px);
+    transition: transform 0.3s ease;
+  }
+
+/* ---- Fim Serviços ---- */
+
+/* ---- Contato ---- */
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+
+  .form-group label {
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 10px;
+    border: 1px solid var(--cor-secundaria-fonte);
+    border-radius: 4px;
+    font-size: 1em;
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border: 2px solid var(--cor-terciaria);
+    outline: none;
+  }
+
+  .form-group input:hover,
+  .form-group textarea:hover {
+    box-shadow: var(--cor-links) 0px 4px 12px;
+    transition: box-shadow 0.3s ease;
+  }
+
+/* ---- Fim Contato ---- */
+
+
