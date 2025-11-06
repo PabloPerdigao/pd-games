@@ -46,7 +46,7 @@ h2, h4, a{
   line-height: 1.6;
 }
 
-p {
+p, figcaption{
   color: var(--cor-secundaria-fonte);
 }
 
@@ -536,6 +536,10 @@ html {
   .form-group textarea:hover {
     box-shadow: var(--cor-links) 0px 4px 12px;
     transition: box-shadow 0.3s ease;
+  }
+
+  address.info-contato h2 {
+    font-style: normal;
   }
 
 /* ---- Fim Contato ---- */
